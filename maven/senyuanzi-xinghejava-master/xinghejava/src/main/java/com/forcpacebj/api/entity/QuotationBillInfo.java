@@ -18,7 +18,7 @@ public class QuotationBillInfo extends BaseEntity {
     private Integer departmentId;
 
     /**
-     * 报价单标题
+     * 报价单标题  1
      */
     private String billName;
 
