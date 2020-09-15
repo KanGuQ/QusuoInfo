@@ -1,0 +1,2 @@
+[ERROR] 09-14 11:54:00 [main] External Static resource location must be a folder [spark.staticfiles.StaticFilesConfiguration.configureExternal(167)]
+[ERROR] 09-14 11:55:27 [main] External Static resource location must be a folder [spark.staticfiles.StaticFilesConfiguration.configureExternal(167)]

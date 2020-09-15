@@ -1,0 +1,42 @@
+CREATE TABLE `quotation_book` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `create_time` datetime(6) DEFAULT NULL,
+  `delete_time` datetime(6) DEFAULT NULL,
+  `update_time` datetime(6) DEFAULT NULL,
+  `account_id` varchar(255) DEFAULT NULL,
+  `company_intro_html` longtext,
+  `cover_html` longtext,
+  `creator_id` varchar(255) DEFAULT NULL,
+  `end_html` longtext,
+  `hide_design_price` bit(1) NOT NULL,
+  `hide_installation_price` bit(1) NOT NULL,
+  `hide_media_price` bit(1) NOT NULL,
+  `hide_product_price` bit(1) NOT NULL,
+  `hide_project_price` bit(1) NOT NULL,
+  `hide_remote_price` bit(1) NOT NULL,
+  `hide_software_price` bit(1) NOT NULL,
+  `is_template` bit(1) NOT NULL,
+  `orientation` smallint(6) NOT NULL,
+  `quotation_bill_id` bigint(20) DEFAULT NULL,
+  `sort_number` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `bottom_logo` varchar(255) DEFAULT NULL,
+  `top_logo` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `quotation_page` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `create_time` datetime(6) DEFAULT NULL,
+  `delete_time` datetime(6) DEFAULT NULL,
+  `update_time` datetime(6) DEFAULT NULL,
+  `quotation_bill_id` bigint(20) DEFAULT NULL,
+  `sort_number` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `type` smallint(6) NOT NULL,
+  `quotation_book_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKn585nhr93xel28t0dgxuo2f5l` (`quotation_book_id`),
+  CONSTRAINT `FKn585nhr93xel28t0dgxuo2f5l` FOREIGN KEY (`quotation_book_id`) REFERENCES `quotation_book` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4;
